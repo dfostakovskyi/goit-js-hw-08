@@ -37,7 +37,12 @@ function createGallery(images) {
 }
 jsGallery.style.display =  "flex";
 jsGallery.style.flexWrap = "wrap";
-jsGallery.style.gap = "30px";
+jsGallery.style.columnGap = "24px";
+jsGallery.style.rowGap = "48px";
+jsGallery.style.width = "1440px";
+jsGallery.style.background = "#fff";
+jsGallery.style.justifyContent = "center";
+jsGallery.style.alignItems = "center";
 
 
 jsGallery.insertAdjacentHTML("afterbegin", createGallery(images));
