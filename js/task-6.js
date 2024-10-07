@@ -8,14 +8,9 @@ let size = 30;
 
 jsCreate.addEventListener("click", creatorMarkup);
 jsDestroy.addEventListener("click", destroyBoxes);
-  
-  
+    
   jsBoxes.innerHTML = "";
-  size = 30;
-
-
-
-
+ 
 function creatorMarkup() {
   if (jsInput.value < 1 || jsInput.value > 100) {
     return;
@@ -28,6 +23,8 @@ function createBoxes(amount) {
   
   destroyBoxes();
 
+  const boxes = [];
+
   for (let i = 0; i < amount; i++) {
 
     const box = document.createElement("div");
@@ -35,18 +32,21 @@ function createBoxes(amount) {
     box.style.height = `${size}px`;
     box.style.backgroundColor = getRandomHexColor();
 
-    jsBoxes.append(box);
+    boxes.push(box);
+
+    // jsBoxes.append(box);
     size += 10;
   }
-  jsInput.value = "";
 
+jsBoxes.append(...boxes);
+
+  jsInput.value = "";
 }
 
 function destroyBoxes() {
   jsBoxes.innerHTML = "";
   size = 30;
 }
-
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
