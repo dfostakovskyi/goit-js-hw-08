@@ -108,7 +108,7 @@ jsGallery.addEventListener("click", function (event) {
                 const instance = basicLightbox.create(`
             <div class="modal">
                 <p>${altText}</p>
-                <img src="${src}" width="1112" height="640">
+                <img src="${src}" width="100%" !height="auto">
             </div>
         `);
         
