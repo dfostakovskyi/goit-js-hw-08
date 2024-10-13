@@ -86,16 +86,6 @@ const jsGalleryItems = images.map(image => `
 
 jsGallery.insertAdjacentHTML("beforeend", jsGalleryItems);
 
-const jsGalleryLinks = document.querySelectorAll(".gallery a");
-
-jsGalleryLinks.forEach(link => {
-    
-  link.addEventListener("click", function(event) {
-      event.preventDefault();
-           
-  });
-});
-
 
 jsGallery.addEventListener("click", function (event) {
        
@@ -113,5 +103,7 @@ jsGallery.addEventListener("click", function (event) {
         `);
         
                 instance.show();
-    }
+  }
+  event.preventDefault();
+
 });
